@@ -10,10 +10,12 @@ pipeline {
 
       }
       steps {
-        sh '''rm -rf /var/www/html/**
-cd dist/
-echo $PWD'''
-        sh 'mv dist/** /var/www/html/'
+        sh '''npm install
+npm run build
+rm -rf /var/www/html/**
+mv dist/** /var/www/html/
+
+'''
       }
     }
   }
