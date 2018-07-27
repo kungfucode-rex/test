@@ -10,9 +10,8 @@ pipeline {
 
       }
       steps {
-        sh 'npm install'
-        sh 'npm run build'
-        sh 'echo $PWD'
+        sh 'rm -rf /var/www/html/**'
+        sh 'mv dist/** /var/www/html/'
       }
     }
   }
