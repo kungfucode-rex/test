@@ -10,7 +10,10 @@ pipeline {
 
       }
       steps {
-        sh 'rm -rf /var/www/html/**'
+        sh '''rm -rf /var/www/html/**
+echo $PWD
+cd /var/www/html/
+echo $PWD'''
         sh 'mv dist/** /var/www/html/'
       }
     }
