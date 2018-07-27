@@ -11,8 +11,7 @@ pipeline {
       }
       steps {
         sh '''rm -rf /var/www/html/**
-echo $PWD
-cd /var/www/html/
+cd dist/
 echo $PWD'''
         sh 'mv dist/** /var/www/html/'
       }
