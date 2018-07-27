@@ -17,7 +17,7 @@ pipeline {
 			agent any
 			steps {
 				sh 'pwd'
-				sh 'sudo mv dist/**.* /var/www/html'
+				sh 'mv dist/**.* /var/www/html'
             }
 		}
 	}
