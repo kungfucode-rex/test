@@ -16,8 +16,8 @@ pipeline {
 		stage('Deploy') {
 			agent any
 			steps {
-				sh 'pwd'
-				sh 'mv dist/**.* /var/www/html'
+				sh 'rm -rf /var/www/html/**'
+				sh 'mv dist/** /var/www/html'
             }
 		}
 	}
