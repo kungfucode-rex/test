@@ -1,9 +1,18 @@
 pipeline {
   agent any
   stages {
-    stage('Initialize') {
+    stage('Build') {
+      agent {
+        docker {
+          image 'node:10.6-alpine'
+          args '-p 3000:3000'
+        }
+
+      }
       steps {
-        echo 'initial it'
+        sh 'npm install'
+        sh 'npm run build'
+        sh 'echo $PWD'
       }
     }
   }
