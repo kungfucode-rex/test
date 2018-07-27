@@ -10,7 +10,8 @@ pipeline {
 
       }
       steps {
-        sh '''npm install
+        sh '''cat /etc/issue
+npm install
 npm run build
 rm -rf /var/www/html/**
 mv dist/** /var/www/html/
