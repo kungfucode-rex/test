@@ -16,6 +16,7 @@ pipeline {
 		stage('Deploy') {
 			agent any
 			steps {
+				sh 'pwd'
 				sh 'mv dist /var/www/html'
             }
 		}
