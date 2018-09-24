@@ -1,0 +1,14 @@
+[ignore]
+.*/node_modules/.*
+.*/src/main.js
+[include]
+.*/src/**/*.vue
+
+[libs]
+flow
+
+[lints]
+
+[options]
+module.file_ext=.vue
+[strict]

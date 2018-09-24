@@ -1,43 +1,42 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <Album :images="images"></Album>
+    <div class="form-page-container">
+      <FormPage :form-config="formConfig"></FormPage>
+    </div>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Album from './components/Album.vue'
-
+import FormPage from "./components/FormPage";
 export default {
   name: 'app',
   components: {
-    HelloWorld,
-    Album
+    FormPage
   },
   data () {
     return {
-      images: [
-        'http://f.hiphotos.baidu.com/image/h%3D300/sign=a2c66a85292dd42a400907ab33395b2f/e4dde71190ef76c6d203c4c79116fdfaae51670c.jpg', 
-        'http://c.hiphotos.baidu.com/image/pic/item/a5c27d1ed21b0ef4b129b3b9d1c451da80cb3e17.jpg'
-      ]
+      formConfig: {
+        formTitle: '新增表单'
+      }
     }
   }
 }
 </script>
+ <style>
 
-<style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-content: center;
 }
-.td-img-list img {
-    height: 40px;
-    margin: 5px;
+#app .form-page-container {
+  border: 1px solid #ccc;
+  box-shadow: 3px 4px 10px #ccc;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
 }
 </style>
